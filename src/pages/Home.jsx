@@ -10,7 +10,7 @@ import Original from "../components/Original";
 import Fishing from "../components/Fishing";
 import Slots from "../components/Slots";
 import Casino from "../components/Casino";
-import Pvc from "../components/PVC";
+import Pvc from "../components/Pvc";
 import Sports from "../components/Sports";
 import WinningInfo from "../components/WinningInfo";
 import EarningsChart from "../components/EarningsChart";
