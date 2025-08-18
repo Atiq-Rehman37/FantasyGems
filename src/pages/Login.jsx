@@ -1,5 +1,7 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
+import { FaLock, FaHeadset } from "react-icons/fa";
+
 const Login = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("Phone");
@@ -130,9 +132,23 @@ const Login = () => {
               Register
             </button>
           </Link>
+
+          {/* Extra Links - stacked vertically with space around */}
+          <div
+            className="d-flex justify-content-around align-items-center mt-2"
+            style={{ height: "100px" }}
+          >
+            <Link to="/forgot-password" className="text-danger fw-semibold">
+              <FaLock className="me-1" /> Forgot Password?
+            </Link>
+            <Link to="/support" className="text-primary fw-semibold">
+              <FaHeadset className="me-1" /> Customer Service
+            </Link>
+          </div>
         </form>
       </div>
     </div>
   );
 };
+
 export default Login;
