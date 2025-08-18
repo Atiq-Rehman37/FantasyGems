@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-light text-dark pt-5 pb-3 mt-5 border-top shadow-sm">
+    <footer className="bg-light text-dark pt-5 pb-3 border-top shadow-sm">
       <div className="container">
         <div className="row gy-4">
           {/* Logo & Description */}

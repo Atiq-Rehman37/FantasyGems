@@ -23,11 +23,11 @@ const CategoryList = ({ activeTab, onTabChange }) => {
           scrollbarWidth: "none", // Firefox
         }}
       >
-        {categories.map((cat) => (
+        {categories.map((tab) => (
           <button
-            key={cat}
+            key={tab}
             className={`btn ${
-              activeTab === cat ? "btn-success" : "btn-outline-success"
+              activeTab === tab ? "btn-success" : "btn-outline-success"
             }`}
             style={{
               borderRadius: "10px",
@@ -35,9 +35,9 @@ const CategoryList = ({ activeTab, onTabChange }) => {
               fontWeight: "500",
               flex: "0 0 auto", // Prevent shrinking
             }}
-            onClick={() => onTabChange(cat)}
+            onClick={() => onTabChange(tab)}
           >
-            {cat}
+            {tab}
           </button>
         ))}
       </div>

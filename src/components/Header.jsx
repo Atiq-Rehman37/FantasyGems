@@ -1,6 +1,6 @@
 // Header.jsx
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaDownload, FaHeadset } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -9,22 +9,28 @@ const Header = () => {
         <div className="d-flex justify-content-between align-items-center">
           {/* Left: Logo */}
           <div className="d-flex align-items-center">
-            <img
-              src={"./logo.jpg"} // Replace with your logo path
-              alt="Fantasy Gems Logo"
-              style={{ maxHeight: "50px" }}
-              className="me-2"
-            />
+            <Link to="/">
+              <img
+                src={"./logo.jpg"} // Replace with your logo path
+                alt="Fantasy Gems Logo"
+                style={{ maxHeight: "50px" }}
+                className="me-2"
+              />
+            </Link>
           </div>
 
           {/* Right: Icons */}
           <div className="d-flex align-items-center">
-            <button type="btn" className="btn btn-outline-success me-2">
-              Login
-            </button>
-            <button type="btn" className="btn btn-success">
-              Register
-            </button>
+            <Link to={"/login"}>
+              <button type="btn" className="btn btn-outline-success me-2">
+                Login
+              </button>
+            </Link>
+            <Link to={"./register"}>
+              <button type="btn" className="btn btn-success">
+                Register
+              </button>
+            </Link>
           </div>
         </div>
       </div>
