@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -8,11 +8,51 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import { use } from "react";
+import { UserContext } from "../context/UserContext";
 
 const Register = () => {
   const [activeTab, setActiveTab] = useState("Phone");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const navigate = useNavigate();
+  const { registerUser } = useContext(UserContext);
+
+  const name = useRef();
+  const number = useRef();
+  const email = useRef();
+  const password = useRef();
+  const confirmPassword = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (password.current.value !== confirmPassword.current.value) {
+      alert("❌ Password and Confirm Password do not match!");
+      return;
+    }
+
+    const newUser = {
+      username: name.current.value,
+      userpassword: password.current.value,
+      confirmpassword: confirmPassword.current.value,
+      ...(activeTab === "Phone"
+        ? { usernumber: number.current.value }
+        : { useremail: email.current.value }),
+    };
+
+    registerUser(newUser);
+
+    name.current.value = "";
+    password.current.value = "";
+    confirmPassword.current.value = "";
+    if (activeTab === "Phone") {
+      number.current.value = "";
+    } else {
+      email.current.value = "";
+    }
+
+    navigate("/login");
+  };
 
   return (
     <div
@@ -67,7 +107,7 @@ const Register = () => {
         </div>
 
         {/* Form */}
-        <form className="p-4">
+        <form className="p-4" onSubmit={handleSubmit}>
           {/* Username */}
           <div className="mb-3">
             <label className="fw-semibold">
@@ -78,6 +118,7 @@ const Register = () => {
               type="text"
               className="form-control"
               placeholder="Enter your name"
+              ref={name}
               required
             />
           </div>
@@ -94,6 +135,7 @@ const Register = () => {
                   type="tel"
                   className="form-control"
                   placeholder="Enter phone number"
+                  ref={number}
                   required
                 />
               </div>
@@ -108,6 +150,7 @@ const Register = () => {
                 type="email"
                 className="form-control"
                 placeholder="Enter email address"
+                ref={email}
                 required
               />
             </div>
@@ -124,7 +167,9 @@ const Register = () => {
                 type={showPassword ? "text" : "password"}
                 className="form-control"
                 placeholder="Password"
+                ref={password}
                 required
+                autoComplete="new-password"
               />
               <span
                 className="input-group-text"
@@ -147,7 +192,9 @@ const Register = () => {
                 type={showConfirmPassword ? "text" : "password"}
                 className="form-control"
                 placeholder="Confirm password"
+                ref={confirmPassword}
                 required
+                autoComplete="new-password"
               />
               <span
                 className="input-group-text"

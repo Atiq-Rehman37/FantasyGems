@@ -13,6 +13,8 @@ import {
   FaBookOpen,
 } from "react-icons/fa";
 import { RiFeedbackLine } from "react-icons/ri";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 const cards = [
   { icon: <FaWallet size={28} color="red" />, name: "Wallet", link: "" },
@@ -92,6 +94,7 @@ const serviceData = [
 ];
 
 const Accountpage = () => {
+  const { logoutUser } = useContext(UserContext);
   return (
     <div
       className="container-fluid d-flex justify-content-center align-items-start min-vh-100 py-4"
@@ -235,7 +238,10 @@ const Accountpage = () => {
         </div>
         {/* Logout button */}
         <div className="mx-auto mb-5" style={{ width: "90%" }}>
-          <button className="btn btn-outline-success w-100">
+          <button
+            className="btn btn-outline-success w-100"
+            onClick={logoutUser}
+          >
             <span>
               <FaSignOutAlt size={22} className="me-2" />
             </span>{" "}

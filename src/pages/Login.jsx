@@ -1,20 +1,50 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useState } from "react";
+import { useRef, useState, useContext } from "react";
 import { FaLock, FaHeadset } from "react-icons/fa";
+import { UserContext } from "../context/UserContext";
 
 const Login = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("Phone");
   const [showPassword, setShowPassword] = useState(false);
+  const { loginUser } = useContext(UserContext);
+
+  // Refs
+  const number = useRef();
+  const email = useRef();
+  const password = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // This will trigger HTML5 validation first
-    if (e.target.checkValidity()) {
-      // If valid, navigate to home/dashboard
-      navigate("/dashboard");
+    // Build login object based on active tab
+    const loginData = {
+      userpassword: password.current.value,
+      ...(activeTab === "Phone"
+        ? { usernumber: number.current.value }
+        : { useremail: email.current.value }),
+    };
+
+    const success = loginUser(loginData);
+
+    if (success) {
+      console.log("✅ Login successful");
+      navigate("/");
+    } else {
+      alert("Invalid credentials ❌");
+      return;
     }
+
+    // Clear fields
+    password.current.value = "";
+    if (activeTab === "Phone") {
+      number.current.value = "";
+    } else {
+      email.current.value = "";
+    }
+
+    // Navigate after successful login (dummy)
+    navigate("/");
   };
 
   return (
@@ -78,6 +108,7 @@ const Login = () => {
                   type="tel"
                   className="form-control"
                   placeholder="Enter phone number"
+                  ref={number}
                   required
                 />
               </div>
@@ -89,6 +120,7 @@ const Login = () => {
                 type="email"
                 className="form-control"
                 placeholder="Enter email address"
+                ref={email}
                 required
               />
             </div>
@@ -102,7 +134,9 @@ const Login = () => {
                 type={showPassword ? "text" : "password"}
                 className="form-control"
                 placeholder="Password"
+                ref={password}
                 required
+                autoComplete="current-password"
               />
               <span
                 className="input-group-text"
@@ -138,7 +172,7 @@ const Login = () => {
             </button>
           </Link>
 
-          {/* Extra Links - stacked vertically with space around */}
+          {/* Extra Links */}
           <div
             className="d-flex justify-content-around align-items-center mt-2"
             style={{ height: "100px" }}

@@ -11,23 +11,57 @@ import WalletPage from "./pages/WalletPage";
 import Accountpage from "./pages/Accountpage";
 import ActivityPage from "./pages/ActivityPage";
 import Promotion from "./pages/Promotion";
+import { UserProvider } from "./context/UserContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+
 const App = () => {
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+      <UserProvider>
         <Header />
         <Routes>
+          {/* Public routes */}
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/wallet" element={<WalletPage />} />
-          <Route path="/account" element={<Accountpage />} />
-          <Route path="/activity" element={<ActivityPage />} />
-          <Route path="/promotion" element={<Promotion />} />
+
+          {/* Protected routes */}
+          <Route
+            path="/wallet"
+            element={
+              <ProtectedRoute>
+                <WalletPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/account"
+            element={
+              <ProtectedRoute>
+                <Accountpage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/activity"
+            element={
+              <ProtectedRoute>
+                <ActivityPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/promotion"
+            element={
+              <ProtectedRoute>
+                <Promotion />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
         <Footer />
-      </BrowserRouter>
-    </>
+      </UserProvider>
+    </BrowserRouter>
   );
 };
 
