@@ -28,7 +28,12 @@ const Login = () => {
     >
       <div className="col-md-5 bg-white shadow rounded my-4">
         {/* Header */}
-        <div className="bg-success text-white p-4 rounded-top">
+        <div
+          className="text-white p-4 rounded-top"
+          style={{
+            background: "linear-gradient(135deg, #00b894, #019875)",
+          }}
+        >
           <h5 className="fw-bold">Log in</h5>
           <p className="mb-0" style={{ fontSize: "0.9rem" }}>
             Please log in with your phone number or email. <br />

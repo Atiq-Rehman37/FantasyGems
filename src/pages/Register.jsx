@@ -25,7 +25,12 @@ const Register = () => {
     >
       <div className="col-md-6 col-lg-5 bg-white shadow rounded my-4">
         {/* Header */}
-        <div className="bg-success text-white p-4 rounded-top">
+        <div
+          className="text-white p-4 rounded-top"
+          style={{
+            background: "linear-gradient(135deg, #00b894, #019875)",
+          }}
+        >
           <h5 className="fw-bold">Register</h5>
           <p className="mb-0" style={{ fontSize: "0.9rem" }}>
             Create your account using phone or email. <br />
