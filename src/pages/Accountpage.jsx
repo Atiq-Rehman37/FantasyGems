@@ -15,11 +15,20 @@ import {
 import { RiFeedbackLine } from "react-icons/ri";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
+import { Link } from "react-router-dom";
 
 const cards = [
-  { icon: <FaWallet size={28} color="red" />, name: "Wallet", link: "" },
-  { icon: <FaDownload size={28} color="orange" />, name: "Deposit", link: "" },
-  { icon: <FaUpload size={28} color="blue" />, name: "Withdraw", link: "" },
+  { icon: <FaWallet size={28} color="red" />, name: "Wallet", link: "/wallet" },
+  {
+    icon: <FaDownload size={28} color="orange" />,
+    name: "Deposit",
+    link: "/deposit",
+  },
+  {
+    icon: <FaUpload size={28} color="blue" />,
+    name: "Withdraw",
+    link: "/withdraw",
+  },
 ];
 
 const cardData = [
@@ -29,6 +38,7 @@ const cardData = [
     description: "My game history",
     icon: <MdHistory size={30} color="#3B82F6" />,
     bg: "bg-primary bg-opacity-10",
+    link: "/bethistory",
   },
   {
     id: 2,
@@ -36,6 +46,7 @@ const cardData = [
     description: "My transaction history",
     icon: <MdOutlineSwapHoriz size={30} color="#10B981" />,
     bg: "bg-success bg-opacity-10",
+    link: "/transactionhistory",
   },
   {
     id: 3,
@@ -43,6 +54,7 @@ const cardData = [
     description: "My deposit history",
     icon: <BiBookBookmark size={30} color="#EF4444" />,
     bg: "bg-danger bg-opacity-10",
+    link: "/depositistory",
   },
   {
     id: 4,
@@ -50,6 +62,7 @@ const cardData = [
     description: "My withdraw history",
     icon: <GiTakeMyMoney size={30} color="#F59E0B" />,
     bg: "bg-warning bg-opacity-10",
+    link: "/withdrawhistory",
   },
 ];
 
@@ -60,18 +73,26 @@ const menuData = [
     title: "Notification",
     icon: <MdNotifications size={24} color="#198754" />,
     badge: 2,
+    link: "/notification",
   },
-  { id: 2, title: "Gifts", icon: <AiOutlineGift size={24} color="#198754" /> },
+  {
+    id: 2,
+    title: "Gifts",
+    icon: <AiOutlineGift size={24} color="#198754" />,
+    link: "",
+  },
   {
     id: 3,
     title: "Game statistics",
     icon: <BsBarChartLine size={24} color="#198754" />,
+    link: "",
   },
   {
     id: 4,
     title: "Language",
     icon: <FaGlobe size={24} color="#198754" />,
     rightText: "English",
+    link: "",
   },
 ];
 
@@ -139,13 +160,15 @@ const Accountpage = () => {
           <hr />
           <div className="d-flex justify-content-around flex-wrap mt-3">
             {cards.map((item, index) => (
-              <div
-                className="d-flex flex-column align-items-center mx-3"
-                key={index}
-              >
-                {item.icon}
-                <p className="mt-2 mb-0 small">{item.name}</p>
-              </div>
+              <Link to={item.link} className="text-decoration-none">
+                <div
+                  className="d-flex flex-column align-items-center mx-3"
+                  key={index}
+                >
+                  {item.icon}
+                  <p className="mt-2 mb-0 small">{item.name}</p>
+                </div>{" "}
+              </Link>
             ))}
           </div>
         </div>
@@ -155,19 +178,21 @@ const Accountpage = () => {
           className="bg-light rounded p-3 mx-auto mb-4"
           style={{ width: "90%" }}
         >
-          <div className="d-flex align-items-center gap-3">
-            <FaDotCircle color="orange" size={30} />
-            <div className="w-100">
-              <div className="d-flex justify-content-between align-items-center">
-                <h6 className="fw-semibold mb-0">Safe</h6>
-                <p className="text-muted mb-0">RS 0.00</p>
+          <Link to={"/safe"} className="text-decoration-none text-dark">
+            <div className="d-flex align-items-center gap-3">
+              <FaDotCircle color="orange" size={30} />
+              <div className="w-100">
+                <div className="d-flex justify-content-between align-items-center">
+                  <h6 className="fw-semibold mb-0">Safe</h6>
+                  <p className="text-muted mb-0">RS 0.00</p>
+                </div>
+                <small className="text-muted">
+                  The daily interest rate is 0.1%, income is calculated every 1
+                  minute.
+                </small>
               </div>
-              <small className="text-muted">
-                The daily interest rate is 0.1%, income is calculated every 1
-                minute.
-              </small>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* History Cards Section */}
@@ -178,15 +203,19 @@ const Accountpage = () => {
           <div className="row g-3">
             {cardData.map((card) => (
               <div className="col-12 col-md-6" key={card.id}>
-                <div className="d-flex align-items-center p-3 bg-white rounded shadow-sm card-hover">
-                  <div className={`p-3 rounded me-3 ${card.bg}`}>
-                    {card.icon}
+                <Link to={card.link} className="text-decoration-none">
+                  <div className="d-flex align-items-center p-3 bg-white rounded shadow-sm card-hover">
+                    <div className={`p-3 rounded me-3 ${card.bg}`}>
+                      {card.icon}
+                    </div>
+                    <div>
+                      <h6 className="fw-bold mb-1">{card.title}</h6>
+                      <p className="text-muted mb-0 small">
+                        {card.description}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h6 className="fw-bold mb-1">{card.title}</h6>
-                    <p className="text-muted mb-0 small">{card.description}</p>
-                  </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
@@ -204,10 +233,12 @@ const Accountpage = () => {
                 index !== menuData.length - 1 ? "border-bottom" : ""
               }`}
             >
-              <div className="d-flex align-items-center gap-3">
-                {item.icon}
-                <span>{item.title}</span>
-              </div>
+              <Link to={item.link} className="text-decoration-none">
+                <div className="d-flex align-items-center gap-3">
+                  {item.icon}
+                  <span>{item.title}</span>
+                </div>
+              </Link>
               {item.badge ? (
                 <span className="badge bg-danger">{item.badge}</span>
               ) : item.rightText ? (

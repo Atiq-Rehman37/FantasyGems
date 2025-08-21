@@ -7,7 +7,8 @@ import { Suspense, lazy } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { UserProvider } from "./context/UserContext";
-import ProtectedRoute from "./components/ProtectedRoute"; // keep your protected route wrapper
+import ProtectedRoute from "./components/ProtectedRoute";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Lazy load pages
 const Home = lazy(() => import("./pages/Home"));
@@ -17,6 +18,14 @@ const WalletPage = lazy(() => import("./pages/WalletPage"));
 const Accountpage = lazy(() => import("./pages/Accountpage"));
 const ActivityPage = lazy(() => import("./pages/ActivityPage"));
 const Promotion = lazy(() => import("./pages/Promotion"));
+const DepositPage = lazy(() => import("./pages/DepositPage"));
+const WithdrawPage = lazy(() => import("./pages/WithdrawPage"));
+const SafePage = lazy(() => import("./pages/SafePage"));
+const BetHistory = lazy(() => import("./pages/BetHistory"));
+const TransactionHistory = lazy(() => import("./pages/TransactionHistory"));
+const DepositHistory = lazy(() => import("./pages/DepositHistory"));
+const WithdrawHistory = lazy(() => import("./pages/WithdrawHistory"));
+const Notification = lazy(() => import("./pages/Notification"));
 
 const App = () => {
   return (
@@ -32,6 +41,7 @@ const App = () => {
             </div>
           }
         >
+          <ScrollToTop />
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Home />} />
@@ -68,6 +78,70 @@ const App = () => {
               element={
                 <ProtectedRoute>
                   <Promotion />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/deposit"
+              element={
+                <ProtectedRoute>
+                  <DepositPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/withdraw"
+              element={
+                <ProtectedRoute>
+                  <WithdrawPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/safe"
+              element={
+                <ProtectedRoute>
+                  <SafePage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/bethistory"
+              element={
+                <ProtectedRoute>
+                  <BetHistory />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/transactionhistory"
+              element={
+                <ProtectedRoute>
+                  <TransactionHistory />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/depositistory"
+              element={
+                <ProtectedRoute>
+                  <DepositHistory />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/withdrawhistory"
+              element={
+                <ProtectedRoute>
+                  <WithdrawHistory />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/notification"
+              element={
+                <ProtectedRoute>
+                  <Notification />
                 </ProtectedRoute>
               }
             />
