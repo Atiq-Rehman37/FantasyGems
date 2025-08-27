@@ -26,7 +26,11 @@ const TransactionHistory = lazy(() => import("./pages/TransactionHistory"));
 const DepositHistory = lazy(() => import("./pages/DepositHistory"));
 const WithdrawHistory = lazy(() => import("./pages/WithdrawHistory"));
 const Notification = lazy(() => import("./pages/Notification"));
-
+const Giftpage = lazy(() => import("./pages/Gift"));
+const GameStatistics = lazy(() => import("./pages/GameStatistics"));
+const Feedback = lazy(() => import("./pages/Feedback"));
+const Announcement = lazy(() => import("./pages/Announcement"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
 const App = () => {
   return (
     <BrowserRouter>
@@ -142,6 +146,46 @@ const App = () => {
               element={
                 <ProtectedRoute>
                   <Notification />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/gift"
+              element={
+                <ProtectedRoute>
+                  <Giftpage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/gameStats"
+              element={
+                <ProtectedRoute>
+                  <GameStatistics />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/feedback"
+              element={
+                <ProtectedRoute>
+                  <Feedback />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/announcement"
+              element={
+                <ProtectedRoute>
+                  <Announcement />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/aboutus"
+              element={
+                <ProtectedRoute>
+                  <AboutUs />
                 </ProtectedRoute>
               }
             />

@@ -1,21 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Notification = () => {
-  const notifications = [
-    {
-      id: 1,
-      title: "✉️ NEW MEMBER",
-      message: "Welcome to our platform! 🎉",
-      date: new Date().toLocaleString(),
-    },
-    {
-      id: 2,
-      title: "📢 Update",
-      message: "No new notifications right now. Stay tuned for updates!",
-      date: new Date().toLocaleString(),
-    },
-  ];
-
+const Feedback = () => {
   return (
     <div className="container-fluid d-flex justify-content-center py-4 min-vh-100">
       <div
@@ -42,24 +27,36 @@ const Notification = () => {
             >
               ⮜
             </Link>
-            Notifications
+            FeedBack
           </h5>
         </div>
 
-        {/* Notifications List */}
+        {/* Content */}
         <div className="p-3">
-          {notifications.map((n) => (
-            <div key={n.id} className="p-4 shadow-sm mb-3 rounded">
-              <h5 className="fw-semibold mb-1">{n.title}</h5>
-              <small className="text-muted">{n.date}</small>
-              <hr />
-              <p className="fw-semibold text-muted">{n.message}</p>
+          <div className="mb-4">
+            <textarea
+              className="form-control shadow-sm"
+              rows={12}
+              placeholder="Write your feedback here..."
+            ></textarea>
+          </div>
+
+          {/* History */}
+          <div className="mt-5 text-center">
+            <h6 className="fw-bold">
+              Send helpfull feedback chance to win Mystery Rewards
+            </h6>
+            <div className="text-center text-muted">
+              <img src={"feedimg.webp"} alt="" height={"200px"} /> <br />
+              <button type="submit" className="btn-success btn my-3 px-3">
+                Submit
+              </button>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Notification;
+export default Feedback;

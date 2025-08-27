@@ -48,10 +48,10 @@ const Superjackpot = () => {
 
   return (
     <div className="container my-4">
-      <h4>🏆 Super Jackpot</h4>
-      <p className="text-muted text-sm mb-3">
+      <h4 className="text-high">🏆 Super Jackpot</h4>
+      <p className="text-low text-sm mb-3">
         When you get the super jackpot you will get extra rewards. Highest{" "}
-        <span className="text-danger">Rs 10,000.00</span>
+        <span className="text-high fw-bold">Rs 10,000.00</span>
       </p>
 
       {/* Horizontal Scroll Wrapper */}
@@ -101,10 +101,8 @@ const Superjackpot = () => {
 
             {/* Card Content */}
             <div className="card-body">
-              <h6 className="card-title">{jackpot.title}</h6>
-              <p className="card-text text-danger fw-semibold">
-                {jackpot.price}
-              </p>
+              <h6 className="fw-semibold text-high">{jackpot.title}</h6>
+              <p className="card-text text-low fw-semibold">{jackpot.price}</p>
             </div>
           </div>
         ))}

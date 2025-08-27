@@ -10,25 +10,17 @@ import {
 
 const WalletPage = () => {
   return (
-    <div
-      className="container-fluid d-flex justify-content-center align-items-center min-vh-100 py-4"
-      style={{
-        backgroundImage: `url("heroimg.webp")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="container-fluid d-flex justify-content-center align-items-center min-vh-100 py-4">
       <div
         className="card shadow-lg w-100"
-        style={{ maxWidth: "600px", borderRadius: "20px" }}
+        style={{ maxWidth: "950px", borderRadius: "20px" }}
       >
         {/* Header */}
         <div
-          className="text-center text-white p-4"
+          className="text-center text-white p-4 bg-successs"
           style={{
             borderTopLeftRadius: "20px",
             borderTopRightRadius: "20px",
-            background: "linear-gradient(135deg, #1aac80ff, #1b97b0ff)",
           }}
         >
           <FaWallet size={40} className="mb-2" />

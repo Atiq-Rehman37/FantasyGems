@@ -41,17 +41,10 @@ const WithdrawPage = () => {
   ];
 
   return (
-    <div
-      className="container-fluid min-vh-100 d-flex justify-content-center align-items-center py-4"
-      style={{
-        backgroundImage: "url('heroimg.webp')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="container-fluid min-vh-100 d-flex justify-content-center align-items-center py-4">
       <div
         className="card shadow-lg p-3 w-100"
-        style={{ maxWidth: "700px", borderRadius: "15px" }}
+        style={{ maxWidth: "950px", borderRadius: "15px" }}
       >
         {/* Header */}
         <div className="d-flex justify-content-between align-items-center mb-3">
@@ -70,10 +63,7 @@ const WithdrawPage = () => {
         </div>
 
         {/* Balance */}
-        <div
-          className="text-white p-4 rounded mb-3"
-          style={{ background: "linear-gradient(135deg, #00b894, #019875)" }}
-        >
+        <div className="text-white p-4 rounded mb-3 bg-successs">
           <div className="d-flex justify-content-between align-items-center">
             <span className="fw-bold">
               <FaWallet className="me-2" color="yellow" />

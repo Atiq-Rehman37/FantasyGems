@@ -19,11 +19,11 @@ const Hotslots = () => {
       percent: "97.87%",
     },
     {
-      img: "lottery1.png",
+      img: "fortune.png",
       percent: "97.87%",
     },
     {
-      img: "fortune.png",
+      img: "aviator.png",
       percent: "97.87%",
     },
   ];
@@ -31,10 +31,8 @@ const Hotslots = () => {
   return (
     <div className="container my-4">
       <div className="d-flex justify-content-between align-items-center mb-3">
-        <h4>🔥 HotSlots</h4>
-        <p className="me-2 bg-success text-light px-3 py-2 rounded-3">
-          ALL {total}
-        </p>
+        <h4 className="text-high">🔥 HotSlots</h4>
+        <p className="me-2 btn-success px-3 py-2 rounded-3">ALL {total}</p>
       </div>
       {/* Horizontal Scroll Wrapper */}
       <div
@@ -63,7 +61,7 @@ const Hotslots = () => {
                 objectFit: "contain",
               }}
             />
-            <p className="text-small bg-success text-light text-center rounded-3 mt-2">
+            <p className="text-small btn-success  text-center rounded-3 mt-2">
               Winning: {pop.percent}
             </p>
           </div>

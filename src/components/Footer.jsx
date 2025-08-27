@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="row gy-4">
           {/* Logo & Description */}
           <div className="col-md-4">
-            <h4 className="fw-bold mb-3 text-success">
+            <h4 className="fw-bold mb-3 text-primary">
               <FaGem className="me-2" />
               Fantasy Gems
             </h4>
@@ -26,10 +26,10 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="col-md-4">
-            <h5 className="mb-3 text-success">Quick Links</h5>
+            <h5 className="mb-3 text-primary">Quick Links</h5>
             <ul className="list-unstyled">
               <li>
-                <a href="#" className="text-dark text-decoration-none">
+                <a href="#" className="text-high text-decoration-none">
                   Lottery
                 </a>
               </li>
@@ -63,18 +63,18 @@ const Footer = () => {
 
           {/* Social & Contact */}
           <div className="col-md-4">
-            <h5 className="mb-3 text-success">Stay Connected</h5>
+            <h5 className="mb-3 text-primary">Stay Connected</h5>
             <div className="d-flex gap-3 fs-5">
-              <a href="#" className="text-success">
+              <a href="#" className="text-primary">
                 <FaFacebookF />
               </a>
-              <a href="#" className="text-success">
+              <a href="#" className="text-primary">
                 <FaTwitter />
               </a>
-              <a href="#" className="text-success">
+              <a href="#" className="text-primary">
                 <FaInstagram />
               </a>
-              <a href="#" className="text-success">
+              <a href="#" className="text-primary">
                 <FaYoutube />
               </a>
             </div>
@@ -88,7 +88,7 @@ const Footer = () => {
         <hr className="mt-4" />
 
         {/* Bottom Text */}
-        <div className="text-center small text-muted">
+        <div className="text-center small text-high fw-semibold">
           © {new Date().getFullYear()} Fantasy Gems Casino. All rights reserved.
           Play responsibly. 18+
         </div>

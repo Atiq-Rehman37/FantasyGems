@@ -15,10 +15,6 @@ const Papular = () => {
       percent: "97.87%",
     },
     {
-      img: "lottery1.png",
-      percent: "97.87%",
-    },
-    {
       img: "fortune.png",
       percent: "97.87%",
     },
@@ -26,15 +22,17 @@ const Papular = () => {
       img: "javelin.png",
       percent: "97.87%",
     },
+    {
+      img: "cricket.png",
+      percent: "98.87%",
+    },
   ];
   const total = popgames.length;
   return (
     <div className="container my-4">
       <div className="d-flex justify-content-between align-items-center mb-3">
-        <h4>💎 Popular</h4>
-        <p className="me-2 bg-success text-light px-3 py-2 rounded-3">
-          ALL {total}
-        </p>
+        <h4 className="text-high">💎 Popular</h4>
+        <p className="me-2 btn-success px-3 py-2 rounded-3">ALL {total}</p>
       </div>
       {/* Horizontal Scroll Wrapper */}
       <div
@@ -63,7 +61,7 @@ const Papular = () => {
                 objectFit: "contain",
               }}
             />
-            <p className="text-small bg-success text-light text-center rounded-3 mt-2">
+            <p className="text-small btn-success text-light text-center rounded-3 mt-2">
               Winning: {pop.percent}
             </p>
           </div>

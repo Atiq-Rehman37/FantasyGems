@@ -28,7 +28,7 @@ const WinningInfo = () => {
 
   return (
     <div className="container my-4">
-      <h4 className="fw-bold mb-4">💰 Winning Info</h4>
+      <h4 className="fw-bold mb-4 text-high">💰 Winning Info</h4>
 
       <div className="row container g-4 justify-content-between">
         {cards.map((card) => (

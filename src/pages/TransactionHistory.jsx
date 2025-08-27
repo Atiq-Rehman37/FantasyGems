@@ -4,18 +4,11 @@ const TransactionHistory = () => {
   const [selectedDate, setSelectedDate] = useState("");
 
   return (
-    <div
-      className="container-fluid d-flex justify-content-center py-4 min-vh-100"
-      style={{
-        backgroundImage: `url("heroimg.webp")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="container-fluid d-flex justify-content-center py-4 min-vh-100">
       <div
         className="card shadow-lg"
         style={{
-          maxWidth: "700px",
+          maxWidth: "950px",
           width: "100%",
           backgroundColor: "white",
           borderRadius: "15px",
@@ -24,9 +17,8 @@ const TransactionHistory = () => {
       >
         {/* Header */}
         <div
-          className="p-3 border-bottom text-light py-4"
+          className="p-3 border-bottom text-light py-4 bg-successs"
           style={{
-            background: "linear-gradient(135deg, #00b894, #019875)",
             borderRadius: "15px 15px 0px 0px",
           }}
         >

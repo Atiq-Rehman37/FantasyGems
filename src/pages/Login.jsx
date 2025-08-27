@@ -48,22 +48,10 @@ const Login = () => {
   };
 
   return (
-    <div
-      className="container-fluid d-flex align-items-center justify-content-center"
-      style={{
-        backgroundImage: `url("heroimg.webp")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="col-md-5 bg-white shadow rounded my-4">
+    <div className="container-fluid d-flex align-items-center justify-content-center">
+      <div className="col-md-6 bg-white shadow rounded my-4">
         {/* Header */}
-        <div
-          className="text-white p-4 rounded-top"
-          style={{
-            background: "linear-gradient(135deg, #00b894, #019875)",
-          }}
-        >
+        <div className="text-white p-4 rounded-top bg-successs">
           <h5 className="fw-bold">Log in</h5>
           <p className="mb-0" style={{ fontSize: "0.9rem" }}>
             Please log in with your phone number or email. <br />
@@ -76,7 +64,7 @@ const Login = () => {
           <div
             className={`py-2 flex-fill fw-semibold ${
               activeTab === "Phone"
-                ? "text-success border-bottom border-2 border-success"
+                ? "text-primary border-bottom border-2 border-primary"
                 : "text-muted"
             }`}
             style={{ cursor: "pointer" }}
@@ -87,7 +75,7 @@ const Login = () => {
           <div
             className={`py-2 flex-fill fw-semibold ${
               activeTab === "Email"
-                ? "text-success border-bottom border-2 border-success"
+                ? "text-primary border-bottom border-2 border-primary"
                 : "text-muted"
             }`}
             style={{ cursor: "pointer" }}

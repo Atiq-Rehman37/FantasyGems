@@ -55,7 +55,7 @@ const EarningsChart = () => {
 
   return (
     <div className="container my-4">
-      <h4 className="mb-3">📊 Today's earnings chart</h4>
+      <h4 className="mb-3 text-high">📊 Today's earnings chart</h4>
       <div className="row g-3">
         {earnings.map((user) => (
           <div key={user.id} className="col-lg-6 col-12">

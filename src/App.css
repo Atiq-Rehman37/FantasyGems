@@ -1,3 +1,36 @@
 body {
   background-color: rgb(235, 233, 233) !important;
 }
+.bg-successs {
+  background-color: #5202f0 !important;
+}
+.btn-success {
+  background-color: #5202f0 !important;
+  color: white;
+  border-color: #5202f0 !important;
+  cursor: pointer;
+}
+.btn-success:hover {
+  background-color: #3e01c2 !important; /* slightly darker hover */
+  border-color: #3e01c2 !important;
+}
+
+.btn-outline-success {
+  border-color: #3e01c2 !important;
+  color: #5202f0 !important;
+}
+.btn-outline-success:hover {
+  background-color: #3e01c2 !important;
+  color: white !important;
+}
+
+.text-primary {
+  color: #3e01c2 !important;
+}
+
+.text-low {
+  color: #bb52f0;
+}
+.text-high {
+  color: #a002f0;
+}

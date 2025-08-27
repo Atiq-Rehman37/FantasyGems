@@ -71,26 +71,26 @@ const menuData = [
   {
     id: 1,
     title: "Notification",
-    icon: <MdNotifications size={24} color="#198754" />,
+    icon: <MdNotifications size={24} />,
     badge: 2,
     link: "/notification",
   },
   {
     id: 2,
     title: "Gifts",
-    icon: <AiOutlineGift size={24} color="#198754" />,
-    link: "",
+    icon: <AiOutlineGift size={24} />,
+    link: "/gift",
   },
   {
     id: 3,
     title: "Game statistics",
-    icon: <BsBarChartLine size={24} color="#198754" />,
-    link: "",
+    icon: <BsBarChartLine size={24} />,
+    link: "/gameStats",
   },
   {
     id: 4,
     title: "Language",
-    icon: <FaGlobe size={24} color="#198754" />,
+    icon: <FaGlobe size={24} />,
     rightText: "English",
     link: "",
   },
@@ -98,44 +98,46 @@ const menuData = [
 
 // New: Service Center Section
 const serviceData = [
-  { id: 1, title: "Settings", icon: <FaCog size={28} color="teal" /> },
-  { id: 2, title: "Feedback", icon: <RiFeedbackLine size={28} color="teal" /> },
-  { id: 3, title: "Announcement", icon: <FaBullhorn size={28} color="teal" /> },
+  { id: 1, title: "Settings", icon: <FaCog size={28} />, link: "" },
+  {
+    id: 2,
+    title: "Feedback",
+    icon: <RiFeedbackLine size={28} />,
+    link: "/feedback",
+  },
+  {
+    id: 3,
+    title: "Announcement",
+    icon: <FaBullhorn size={28} />,
+    link: "/announcement",
+  },
   {
     id: 4,
     title: "Customer Service",
-    icon: <FaUserCircle size={28} color="teal" />,
+    icon: <FaUserCircle size={28} />,
+    link: "",
   },
   {
     id: 5,
     title: "Beginner's Guide",
-    icon: <FaBookOpen size={28} color="teal" />,
+    icon: <FaBookOpen size={28} />,
+    link: "",
   },
-  { id: 6, title: "About us", icon: <BiBookBookmark size={28} color="teal" /> },
+  {
+    id: 6,
+    title: "About us",
+    icon: <BiBookBookmark size={28} />,
+    link: "/aboutus",
+  },
 ];
 
 const Accountpage = () => {
   const { logoutUser } = useContext(UserContext);
   return (
-    <div
-      className="container-fluid d-flex justify-content-center align-items-start min-vh-100 py-4"
-      style={{
-        backgroundImage: `url("heroimg.webp")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div
-        className="card shadow w-100"
-        style={{ maxWidth: "700px", backgroundColor: "lightgray" }}
-      >
+    <div className="container-fluid d-flex justify-content-center align-items-start min-vh-100 py-4">
+      <div className="card shadow w-100" style={{ maxWidth: "950px" }}>
         {/* Top profile section */}
-        <div
-          className="text-white d-flex justify-content-around align-items-center py-4 rounded-top"
-          style={{
-            background: "linear-gradient(135deg, #00b894, #019875)",
-          }}
-        >
+        <div className="text-white d-flex justify-content-around align-items-center py-4 rounded-top bg-successs">
           <img
             src={"./avator.webp"}
             height={120}
@@ -234,7 +236,7 @@ const Accountpage = () => {
               }`}
             >
               <Link to={item.link} className="text-decoration-none">
-                <div className="d-flex align-items-center gap-3">
+                <div className="d-flex align-items-center gap-3 text-primary">
                   {item.icon}
                   <span>{item.title}</span>
                 </div>
@@ -255,24 +257,24 @@ const Accountpage = () => {
           className="bg-white rounded p-3 mx-auto mb-4"
           style={{ width: "90%" }}
         >
-          <h6 className="fw-bold mb-3">Service center</h6>
+          <h5 className="fw-bold mb-3 text-high">Service center</h5>
           <div className="row text-center">
             {serviceData.map((item) => (
               <div className="col-4 mb-3" key={item.id}>
-                <div className="d-flex flex-column align-items-center">
-                  {item.icon}
-                  <small className="mt-1">{item.title}</small>
-                </div>
+                <Link to={item.link} className="text-decoration-none">
+                  {" "}
+                  <div className="d-flex flex-column align-items-center text-primary">
+                    {item.icon}
+                    <small className="mt-1">{item.title}</small>
+                  </div>
+                </Link>
               </div>
             ))}
           </div>
         </div>
         {/* Logout button */}
         <div className="mx-auto mb-5" style={{ width: "90%" }}>
-          <button
-            className="btn btn-outline-success w-100"
-            onClick={logoutUser}
-          >
+          <button className="btn btn-success w-100" onClick={logoutUser}>
             <span>
               <FaSignOutAlt size={22} className="me-2" />
             </span>{" "}

@@ -32,12 +32,10 @@ const Original = () => {
   return (
     <div className="container my-4">
       <div className="d-flex justify-content-between align-items-center">
-        <h4>🥇 Original</h4>
-        <p className="me-2 bg-success text-light px-3 py-2 rounded-3">
-          ALL {totalGames}
-        </p>
+        <h4 className="text-high">🥇 Original</h4>
+        <p className="me-2 btn-success px-3 py-2 rounded-3">ALL {totalGames}</p>
       </div>
-      <p className="text-small mb-3">
+      <p className="text-small text-low mb-3">
         The Internal Game Is Independently Developed by the FantasyGems Team,
         Which Is Fun,Fair and Safe.{" "}
       </p>

@@ -31,9 +31,9 @@ const InfoBar = () => {
           className="d-flex align-items-center"
           style={{ flex: 1, minWidth: 0 }}
         >
-          <FaVolumeUp className="text-success me-2 flex-shrink-0" size={20} />
+          <FaVolumeUp className="text-primary me-2 flex-shrink-0" size={20} />
           <span
-            className="text-muted text-truncate text-small"
+            className="text-high text-truncate text-small"
             style={{
               whiteSpace: "normal", // allow wrapping
               wordBreak: "break-word",

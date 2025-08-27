@@ -7,17 +7,10 @@ import { Link } from "react-router-dom";
 
 const DepositPage = () => {
   return (
-    <div
-      className="container-fluid min-vh-100 d-flex justify-content-center align-items-center py-4"
-      style={{
-        backgroundImage: "url('heroimg.webp')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="container-fluid min-vh-100 d-flex justify-content-center align-items-center py-4">
       <div
         className="card shadow-lg p-3 w-100"
-        style={{ maxWidth: "700px", borderRadius: "15px" }}
+        style={{ maxWidth: "950px", borderRadius: "15px" }}
       >
         {/* Header */}
         <div className="d-flex justify-content-between align-items-center mb-3">
@@ -32,10 +25,7 @@ const DepositPage = () => {
         </div>
 
         {/* Balance */}
-        <div
-          className="text-white p-4 rounded mb-3"
-          style={{ background: "linear-gradient(135deg, #00b894, #019875)" }}
-        >
+        <div className="text-white p-4 rounded mb-3 bg-successs">
           <div className="d-flex justify-content-between align-items-center">
             <span className="fw-bold">
               <FaWallet className="me-2" color="yellow" />
@@ -65,10 +55,10 @@ const DepositPage = () => {
         <div className="mb-3">
           <h6 className="fw-bold mb-2">Select channel</h6>
           <div className="d-flex gap-2 flex-wrap">
-            <button className="btn btn-outline-success flex-grow-1">
+            <button className="btn btn-success flex-grow-1">
               PkPay-Easypaisa <br /> <small>301 - 50K | 3% Bonus</small>
             </button>
-            <button className="btn btn-outline-primary flex-grow-1">
+            <button className="btn btn-outline-success flex-grow-1">
               All2Pay-Easypaisa <br /> <small>1000 - 50K | 3% Bonus</small>
             </button>
           </div>

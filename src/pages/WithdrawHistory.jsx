@@ -12,18 +12,11 @@ const WithdrawHistory = () => {
   const [selectedDate, setSelectedDate] = useState("");
 
   return (
-    <div
-      className="container-fluid d-flex justify-content-center py-4 min-vh-100"
-      style={{
-        backgroundImage: `url("heroimg.webp")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="container-fluid d-flex justify-content-center py-4 min-vh-100">
       <div
         className="card shadow-lg"
         style={{
-          maxWidth: "700px",
+          maxWidth: "950px",
           width: "100%",
           backgroundColor: "white",
           borderRadius: "15px",
@@ -32,9 +25,8 @@ const WithdrawHistory = () => {
       >
         {/* Header */}
         <div
-          className="p-3 border-bottom py-4 text-light"
+          className="p-3 border-bottom py-4 text-light bg-successs"
           style={{
-            background: "linear-gradient(135deg, #00b894, #019875)",
             borderRadius: "15px 15px 0px 0px",
           }}
         >
@@ -58,7 +50,7 @@ const WithdrawHistory = () => {
               className={`btn me-2 ${
                 activeMethod === method.name
                   ? "btn-success"
-                  : "btn-outline-secondary"
+                  : "btn-outline-success"
               }`}
               style={{ minWidth: "140px", flexShrink: 0 }}
               onClick={() => setActiveMethod(method.name)}

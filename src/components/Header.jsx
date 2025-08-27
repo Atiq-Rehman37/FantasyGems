@@ -70,7 +70,7 @@ const Header = () => {
                     onClick={closeMenu}
                     className={({ isActive }) =>
                       `nav-link px-mobile ${
-                        isActive ? "fw-bold text-success" : ""
+                        isActive ? "fw-bold text-primary" : "text-primary"
                       }`
                     }
                   >

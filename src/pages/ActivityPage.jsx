@@ -34,34 +34,22 @@ const ActivityPage = () => {
   ];
 
   return (
-    <div
-      className="container-fluid d-flex justify-content-center align-items-center min-vh-100 py-4"
-      style={{
-        backgroundImage: `url("heroimg.webp")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="container-fluid d-flex justify-content-center align-items-center min-vh-100 py-4">
       <div
         className="card shadow-lg"
         style={{
-          maxWidth: "700px",
+          maxWidth: "950px",
           width: "100%",
           borderRadius: "20px",
           overflow: "hidden",
         }}
       >
         {/* Title Section */}
-        <div
-          className="text-white p-4"
-          style={{
-            background: "linear-gradient(135deg, #00b894, #019875)",
-          }}
-        >
+        <div className="text-white p-4 bg-successs">
           <h4 className="fw-bold mb-2">Activity</h4>
           <p className="mb-0">
-            Please remember to follow the event page <br />
-            We will launch user feedback activities from time to time
+            Please remember to follow the event page We will launch user
+            feedback activities from time to time
           </p>
         </div>
 

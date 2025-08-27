@@ -5,18 +5,10 @@ import { Link } from "react-router-dom";
 
 const SafePage = () => {
   return (
-    <div
-      className="container-fluid d-flex justify-content-center align-items-start py-4"
-      style={{
-        minHeight: "100vh",
-        backgroundImage: "url('heroimg.webp')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="container-fluid d-flex justify-content-center align-items-start py-4">
       <div
         className="card border-0 shadow-lg p-3 w-100"
-        style={{ maxWidth: "700px", borderRadius: "20px" }}
+        style={{ maxWidth: "950px", borderRadius: "20px" }}
       >
         {/* Header */}
         <div className="d-flex align-items-center mb-3">
@@ -38,17 +30,16 @@ const SafePage = () => {
 
         {/* Balance Card */}
         <div
-          className="card border-0 p-4 mb-3 shadow-sm"
+          className="card border-0 p-4 mb-3 shadow-sm bg-successs"
           style={{
             borderRadius: "15px",
-            background: "linear-gradient(135deg, #00b894, #019875)",
           }}
         >
           <h6 className="text-start text-light fw-bold mb-3">💳 Balance</h6>
           <div className="text-center text-light">
             <h3 className="fw-bold mb-2">Rs0.00</h3>
             <p className="small mb-2">24-hour estimated revenue Rs0.00</p>
-            <span className="badge bg-success">Financial security</span>
+            <span className="badge bg-light text-dark">Financial security</span>
           </div>
         </div>
 

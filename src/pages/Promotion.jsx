@@ -69,30 +69,18 @@ const Promotion = () => {
   ];
 
   return (
-    <div
-      className="container-fluid d-flex justify-content-center align-items-start min-vh-100 py-4"
-      style={{
-        backgroundImage: `url("heroimg.webp")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="container-fluid d-flex justify-content-center align-items-start min-vh-100 py-4">
       <div
         className="card shadow-lg"
         style={{
-          maxWidth: "700px",
+          maxWidth: "950px",
           width: "100%",
           borderRadius: "20px",
           overflow: "hidden",
         }}
       >
         {/* Header */}
-        <div
-          className="text-center text-white p-4"
-          style={{
-            background: "linear-gradient(135deg, #00b894, #019875)",
-          }}
-        >
+        <div className="text-center text-white p-4 bg-successs">
           <h4 className="fw-bold">Agency</h4>
           <h2 className="fw-bold my-2">0</h2>
           <button className="btn btn-light btn-sm px-4 rounded-pill fw-bold mb-2">
@@ -107,10 +95,7 @@ const Promotion = () => {
         <div className="row g-0 text-center">
           {subordinates.map((item, index) => (
             <div className="col-12 col-md-6 p-3" key={index}>
-              <h6
-                className="fw-bold text-white p-2 rounded"
-                style={{ backgroundColor: "#019875" }}
-              >
+              <h6 className="fw-bold text-white p-2 rounded bg-successs">
                 {item.type}
               </h6>
               {item.stats.map((stat, i) => (
@@ -128,10 +113,7 @@ const Promotion = () => {
 
         {/* Download QR Button */}
         <div className="p-3 text-center">
-          <button
-            className="btn fw-bold text-white px-4 py-2 rounded-pill"
-            style={{ backgroundColor: "#019875", width: "100%" }}
-          >
+          <button className="btn fw-bold text-white px-4 py-2 rounded-pill bg-successs">
             Download QR Code
           </button>
         </div>
@@ -145,7 +127,7 @@ const Promotion = () => {
             >
               {/* Left side (icon + title) */}
               <div className="d-flex align-items-center gap-3">
-                <span className="text-success">{item.icon}</span>
+                <span className="text-primary">{item.icon}</span>
                 <span className="fw-semibold">{item.title}</span>
               </div>
 

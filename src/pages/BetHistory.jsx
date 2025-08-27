@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const games = [
   { name: "Lottery", icon: "🎱" },
-  { name: "Casino", icon: "🎰" },
+  { name: "Sports", icon: "🎰" },
   { name: "Fishing", icon: "🎣" },
   { name: "Rummy", icon: "🃏" },
-  { name: "Casino", icon: "🎰" },
+  { name: "Cricket", icon: "🎰" },
 ];
 
 const BetHistory = () => {
@@ -14,18 +14,11 @@ const BetHistory = () => {
   const [selectedDate, setSelectedDate] = useState("");
 
   return (
-    <div
-      className="container-fluid d-flex justify-content-center py-4 min-vh-100"
-      style={{
-        backgroundImage: `url("heroimg.webp")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="container-fluid d-flex justify-content-center py-4 min-vh-100">
       <div
         className="card shadow-lg"
         style={{
-          maxWidth: "700px",
+          maxWidth: "950px",
           width: "100%",
           backgroundColor: "white",
           borderRadius: "15px",
@@ -34,9 +27,8 @@ const BetHistory = () => {
       >
         {/* Header */}
         <div
-          className="p-3 border-bottom py-4 text-light"
+          className="p-3 border-bottom py-4 text-light bg-successs"
           style={{
-            background: "linear-gradient(135deg, #00b894, #019875)",
             borderRadius: "15px 15px 0px 0px",
           }}
         >
@@ -65,9 +57,7 @@ const BetHistory = () => {
             <button
               key={index}
               className={`btn ${
-                activeGame === game.name
-                  ? "btn-success"
-                  : "btn-outline-secondary"
+                activeGame === game.name ? "btn-success" : "btn-outline-success"
               }`}
               style={{
                 minWidth: "120px",
