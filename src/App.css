@@ -29,8 +29,10 @@ body {
 }
 
 .text-low {
-  color: #bb52f0;
+  /* color: #bb52f0; */
+  color: black;
 }
 .text-high {
-  color: #a002f0;
+  /* color: #a002f0; */
+  color: #3e01c2;
 }
